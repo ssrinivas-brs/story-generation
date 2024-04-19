@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="assets/js/page-flip.browser.js"></script>
+        <title>Create a story | OpenAI</title>
+        <link rel="icon" href="http://203.193.173.125/buildriseshine/favicon.png" />
+        <!-- <script src="http://203.193.173.125/manohar/env.js"></script> -->
+        <link rel="stylesheet" href="assets/css/styles.css" />
+    </head>
+
+    <body>
+        <header>
+            <div class="header-content">
+                <h4>API: OpenAI</h4>
+                <p>Story Generation</p>
+            </div>
+        </header>
+
+        <main role="main" class="pt-0">
+            <div class="container" id="query_blk">
+                <div class="row">
+                    <div class="col-12">
+                        <form onsubmit="getCompletions();return false;">
+                            <div>
+                                <h2 class="m-0 text-light">Create a Story</h2>
+                            </div>
+                            <div class="w-100 d-block m-auto">
+                                <label class="w-100 mt-2 text-light">Main Character</label>
+                                <input id="character" class="form-control w-100 m-auto" type="text" placeholder="a toddler named Bobby" value="a toddler named Bobby" required />
+                            </div>
+                            <div class="w-100 d-block m-auto">
+                                <label class="w-100 mt-2 text-light">Main Interest</label>
+                                <input id="character_prompt" class="form-control w-100 m-auto" type="text" placeholder="little League baseball" value="little League baseball" required />
+                            </div>
+                            <div class="w-100 d-block m-auto">
+                                <label class="w-100 mt-2 text-light">Describe the character Illustration</label>
+                                <input id="image_prompt" class="form-control w-100 m-auto" type="text" placeholder="a white boy playing baseball" value="a white boy playing baseball" required />
+                            </div>
+                            <div class="w-100 d-block m-auto">
+                                <label class="w-100 mt-2 text-light">Moral of story</label>
+                                <input id="moral" class="form-control w-100 m-auto" type="text" placeholder="practice helps achieve goals" value="practice helps achieve goals" required />
+                            </div>
+                            <div class="w-100 d-block m-auto">
+                                <label class="w-100 mt-2 text-light">Name</label>
+                                <input id="storyname" class="form-control w-100 m-auto" type="text" placeholder="Bobby's Big Hit" value="Bobby's Big Hit" required />
+                            </div>
+                            <div class="w-100 d-block m-auto">
+                                <button type="submit" class="btn btn-primary w-100 mt-2" id="submit"><span>Create Story</span>
+                                    <div id="loader" class="spinner-border spinner-border-sm d-none" role="status">
+                                        <span class="sr-only"></span>
+                                    </div>
+                                </button>
+                            </div>
+                            <div id="err_blk" class="w-100 d-block m-auto d-none text-light bg-danger badge my-2"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid d-none" id="book_blk">
+                <div id="img_data" class="w-100 d-block m-auto"></div>
+                <div id="res_blk">
+                    <h2 class="w-75 d-block m-auto text-light">Here's the Story:</h2>
+                    <div class="flip-book m-auto mt-2" id="book"></div>
+                    <div class="w-50 d-block m-auto">
+                        <button class="btn btn-primary w-100 mt-3" id="another_story"><span id="answer">Create another Story</span>
+                            <div id="loader" class="spinner-border spinner-border-sm d-none" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer footer-dark">
+            
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
